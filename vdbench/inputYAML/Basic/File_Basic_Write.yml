@@ -1,4 +1,7 @@
 #Edit this file to set your paramters to the vdbench test suite
+# To get more information about the parameters go through the vdbench manual
+
+#Set the destinations for output files
 
 paramFile: "param/param1" # Enter where you want the parameter file to be created in. param is the default directory. param1 can be the name of the parameter file
 

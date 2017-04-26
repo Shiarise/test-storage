@@ -1,3 +1,11 @@
+# Converts the output of the test suite into csv format
+# Parses the flatfile.html found in the specified output directory
+# Creates data frames from the csv and plots it
+######################################################################
+# matplotlib: library used for plotting graphs
+# pandas: library used for creating data frames and csv operations
+######################################################################
+
 import subprocess
 import matplotlib
 import csv
@@ -7,16 +15,22 @@ import yaml
 
 matplotlib.use('Agg')
 
-inputpath=sys.argv[1]
+# Accept command line arg and parse the YAML file
 
+inputpath=sys.argv[1]
 inputFile=open(inputpath,'r')
 dataMap=yaml.load(inputFile)
 
+# Extract destination values 
+ 
 outputCSV=dataMap['csvdestination']
 outputDir=dataMap['outputDir']
 outputPlots=dataMap['graphs']
 
 from matplotlib import pyplot as plt
+
+# Function to parse the flatfile to csv
+
 def parseflat():
 	subprocess.call("./vdbench parse -i %s/flatfile.html -c run interval reqrate rate resp MB/sec Read_rate Read_resp Write_rate Write_resp MB_read MB_write Xfersize Mkdir_rate Mkdir_resp Rmdir_rate Rmdir_resp Create_rate Create_resp Open_rate Open_resp Close_rate Close_resp Delete_rate Delete_resp Getattr_rate Getattr_resp Setattr_rate Setattr_resp  Copy_rate  Copy_resp  Move_rate  Move_resp  compratio dedupratio   cpu_used   cpu_user cpu_kernel   cpu_wait   cpu_idle -f -o %s" %(outputDir,outputCSV) ,shell=True)
 	return
@@ -25,6 +39,8 @@ def parseflat():
 
 
 data = pd.read_csv('out2.csv')
+
+# Function to plot some sample graphs
 
 def plot():
 	
