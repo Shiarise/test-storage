@@ -38,7 +38,7 @@ def parseflat():
 
 
 
-data = pd.read_csv('out2.csv')
+data = pd.read_csv(outputCSV)
 
 # Function to plot some sample graphs
 
