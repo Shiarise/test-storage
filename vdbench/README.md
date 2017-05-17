@@ -27,7 +27,7 @@ To learn more about vdbench : click [here](https://github.com/openebs/test-stora
 ```
 python runVdbench.py <input-path-to-YAML-file>
 ```
-#### The output files will in the *output_<timestamp>* folder. This folder consists of the following files:
+#### The output files will in the *output_{timestamp}* folder. This folder consists of the following files:
 - *paramFile* : The input paramters for vdbench
 - *parsedFlatfile.CSV*: The CSV formatted version of flatfile.html 
 
