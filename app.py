@@ -77,9 +77,9 @@ def vdProcessor():
     maxVal = data.max()
     avgVal = data.mean()
 
-    print("The minimum %s observed in %s" %(param, minVal))
-    print("The maximum %s observed is %s" %(param, maxVal))
-    print("The average %s observed in %s" %(param, avgVal))
+    print("The minimum %s observed in %s" (param, minVal))
+    print("The maximum %s observed is %s" (param, maxVal))
+    print("The average %s observed in %s" (param, avgVal))
 
     statsDict = {'x-range': x, 'y-range': y, 'min-param': minVal, 'max-param': maxVal, 'mean-param': avgVal}
     return (statsDict) 
