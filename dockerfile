@@ -1,4 +1,6 @@
+FROM python:3.6-slim
 RUN pip install numpy
+
 FROM ubuntu:16.04
 
 RUN apt-get update \
