@@ -1,8 +1,7 @@
 FROM python:3.6-slim
-RUN pip install numpy
+RUN pip2 install numpy
 
 FROM ubuntu:16.04
-
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         csh \
