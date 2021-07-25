@@ -1,5 +1,14 @@
-FROM python:3.6-slim
-RUN pip2 install numpy
+FROM docker-dev.artifactory.company.com/centos:7.3.1611
+
+***************************************
+Existing commands in the Dockerfile
+***************************************
+
+RUN yum install -y krb5-devel
+RUN yum install -y python-devel
+RUN yum install -y krb5-workstation
+RUN yum install -y python-setuptools
+RUN yum install -y python-pip
 
 FROM ubuntu:16.04
 RUN apt-get update \
