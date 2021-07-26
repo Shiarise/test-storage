@@ -4,7 +4,7 @@ import math
 import argparse
 import subprocess 
 import csv
-import dislin
+#import dislin
 
 '''
 # SYS.ARGV DEFINITIONS
